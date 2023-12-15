@@ -1,5 +1,5 @@
 /**
- * Swiper 11.0.0
+ * Swiper 11.0.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: December 15, 2023
+ * Released on: October 24, 2023
  */
 
 var Swiper = (function () {
@@ -9487,7 +9487,7 @@ var Swiper = (function () {
   }
 
   /**
-   * Swiper 11.0.0
+   * Swiper 11.0.1
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
@@ -9495,7 +9495,7 @@ var Swiper = (function () {
    *
    * Released under the MIT License
    *
-   * Released on: December 15, 2023
+   * Released on: October 24, 2023
    */
 
 
