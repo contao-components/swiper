@@ -1,5 +1,5 @@
 /**
- * Swiper 11.1.6
+ * Swiper 11.1.7
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -351,8 +351,12 @@ var Swiper = (function () {
     return children.filter(el => el.matches(selector));
   }
   function elementIsChildOf(el, parent) {
-    const children = elementChildren(parent);
-    return children.includes(el);
+    const isChild = parent.contains(el);
+    if (!isChild && parent instanceof HTMLSlotElement) {
+      const children = [...element.assignedElements()];
+      return children.includes(el);
+    }
+    return isChild;
   }
   function showWarning(text) {
     try {
@@ -9638,7 +9642,7 @@ var Swiper = (function () {
   }
 
   /**
-   * Swiper 11.1.6
+   * Swiper 11.1.7
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
