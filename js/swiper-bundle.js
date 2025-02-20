@@ -1,5 +1,5 @@
 /**
- * Swiper 11.2.3
+ * Swiper 11.2.4
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: February 12, 2025
+ * Released on: February 20, 2025
  */
 
 var Swiper = (function () {
@@ -360,7 +360,7 @@ var Swiper = (function () {
       if (el === elementToCheck) {
         return true;
       }
-      elementsQueue.push(...elementToCheck.children, ...(elementToCheck.shadowRoot?.children || []), ...(elementToCheck.assignedElements?.() || []));
+      elementsQueue.push(...elementToCheck.children, ...(elementToCheck.shadowRoot ? elementToCheck.shadowRoot.children : []), ...(elementToCheck.assignedElements ? elementToCheck.assignedElements() : []));
     }
   }
   function elementIsChildOf(el, parent) {
@@ -9767,7 +9767,7 @@ var Swiper = (function () {
   }
 
   /**
-   * Swiper 11.2.3
+   * Swiper 11.2.4
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
@@ -9775,7 +9775,7 @@ var Swiper = (function () {
    *
    * Released under the MIT License
    *
-   * Released on: February 12, 2025
+   * Released on: February 20, 2025
    */
 
 
