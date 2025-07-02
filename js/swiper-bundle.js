@@ -1,5 +1,5 @@
 /**
- * Swiper 11.2.9
+ * Swiper 11.2.10
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -1587,9 +1587,9 @@ var Swiper = (function () {
     if (slide && slideFound) {
       swiper.clickedSlide = slide;
       if (swiper.virtual && swiper.params.virtual.enabled) {
-        swiper.clickedIndex = swiper.getSlideIndexWhenGrid(parseInt(slide.getAttribute('data-swiper-slide-index'), 10));
+        swiper.clickedIndex = parseInt(slide.getAttribute('data-swiper-slide-index'), 10);
       } else {
-        swiper.clickedIndex = swiper.getSlideIndexWhenGrid(slideIndex);
+        swiper.clickedIndex = slideIndex;
       }
     } else {
       swiper.clickedSlide = undefined;
@@ -2265,7 +2265,7 @@ var Swiper = (function () {
       slidesEl
     } = swiper;
     const slidesPerView = params.slidesPerView === 'auto' ? swiper.slidesPerViewDynamic() : params.slidesPerView;
-    let slideToIndex = swiper.clickedIndex;
+    let slideToIndex = swiper.getSlideIndexWhenGrid(swiper.clickedIndex);
     let realIndex;
     const slideSelector = swiper.isElement ? `swiper-slide` : `.${params.slideClass}`;
     const isGrid = swiper.grid && swiper.params.grid && swiper.params.grid.rows > 1;
@@ -2274,7 +2274,7 @@ var Swiper = (function () {
       realIndex = parseInt(swiper.clickedSlide.getAttribute('data-swiper-slide-index'), 10);
       if (params.centeredSlides) {
         swiper.slideToLoop(realIndex);
-      } else if (slideToIndex > isGrid ? (swiper.slides.length - slidesPerView) / 2 - (swiper.params.grid.rows - 1) : swiper.slides.length - slidesPerView) {
+      } else if (slideToIndex > (isGrid ? (swiper.slides.length - slidesPerView) / 2 - (swiper.params.grid.rows - 1) : swiper.slides.length - slidesPerView)) {
         swiper.loopFix();
         slideToIndex = swiper.getSlideIndex(elementChildren(slidesEl, `${slideSelector}[data-swiper-slide-index="${realIndex}"]`)[0]);
         nextTick(() => {
@@ -9825,7 +9825,7 @@ var Swiper = (function () {
   }
 
   /**
-   * Swiper 11.2.9
+   * Swiper 11.2.10
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
