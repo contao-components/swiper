@@ -1,5 +1,5 @@
 /**
- * Swiper 12.0.2
+ * Swiper 12.0.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -5242,7 +5242,8 @@ var Swiper = (function () {
     });
     swiper.navigation = {
       nextEl: null,
-      prevEl: null
+      prevEl: null,
+      arrowSvg
     };
     function getEl(el) {
       let res;
@@ -9713,7 +9714,7 @@ var Swiper = (function () {
   }
 
   /**
-   * Swiper 12.0.2
+   * Swiper 12.0.3
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
