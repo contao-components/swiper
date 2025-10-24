@@ -1,5 +1,5 @@
 /**
- * Swiper 12.0.0
+ * Swiper 12.0.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -9709,7 +9709,7 @@ var Swiper = (function () {
   }
 
   /**
-   * Swiper 12.0.0
+   * Swiper 12.0.1
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *

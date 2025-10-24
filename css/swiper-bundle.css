@@ -1,5 +1,5 @@
 /**
- * Swiper 12.0.0
+ * Swiper 12.0.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -315,27 +315,36 @@
 
 .swiper-horizontal {
   .swiper-button-prev,
-  .swiper-button-next {
+  .swiper-button-next,
+  ~ .swiper-button-prev,
+  ~ .swiper-button-next {
     top: var(--swiper-navigation-top-offset, 50%);
     margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
   }
   .swiper-button-prev,
-  .swiper-rtl .swiper-button-next {
+  & ~ .swiper-button-prev,
+  &.swiper-rtl .swiper-button-next,
+  &.swiper-rtl ~ .swiper-button-next {
     left: var(--swiper-navigation-sides-offset, 4px);
     right: auto;
   }
   .swiper-button-next,
-  .swiper-rtl .swiper-button-prev {
+  & ~ .swiper-button-next,
+  &.swiper-rtl .swiper-button-prev,
+  &.swiper-rtl ~ .swiper-button-prev {
     right: var(--swiper-navigation-sides-offset, 4px);
     left: auto;
   }
   .swiper-button-prev,
-  &.swiper-rtl .swiper-button-next {
+  & ~ .swiper-button-prev,
+  &.swiper-rtl .swiper-button-next,
+  &.swiper-rtl ~ .swiper-button-next {
     .swiper-navigation-icon {
       transform: rotate(180deg);
     }
   }
-  &.swiper-rtl .swiper-button-prev {
+  &.swiper-rtl .swiper-button-prev,
+  &.swiper-rtl ~ .swiper-button-prev {
     .swiper-navigation-icon {
       transform: rotate(0deg);
     }
@@ -343,16 +352,20 @@
 }
 .swiper-vertical {
   .swiper-button-prev,
-  .swiper-button-next {
+  .swiper-button-next,
+  ~ .swiper-button-prev,
+  ~ .swiper-button-next {
     left: var(--swiper-navigation-top-offset, 50%);
     margin-left: calc(0px - (var(--swiper-navigation-size) / 2));
   }
-  .swiper-button-prev {
+  .swiper-button-prev,
+  ~ .swiper-button-prev {
     top: var(--swiper-navigation-sides-offset, 4px);
     bottom: auto;
     transform: rotate(-90deg);
   }
-  .swiper-button-next {
+  .swiper-button-next,
+  ~ .swiper-button-next {
     bottom: var(--swiper-navigation-sides-offset, 4px);
     top: auto;
     transform: rotate(90deg);
